@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 100%;
+    max-height: 450px;
+    max-width: 500px;
+    height: auto;
+}
+
+.main-view {
+    height: 90vh;
+}
+
+.logo {
+    position: absolute;
+    max-width: 1300px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    float: left;
+    opacity: .3;
+    top: 0;
+    left: 0;
+}
+
+.order-main {
+    float: left;
+    width: 70%;
+    height: 100%;
+    background-color: azure;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+    overflow-y: auto;
+}
+
+.order-side {
+    float: right;
+    width: 29%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.description {
+    font-size: 36px;
+    font-family: Helvetica;
+    text-align: left;
+}
+
+.totals {
+    display: inline;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.condiments {
+    color: red;
+}
+
+.price {
+    float: right;
+}
