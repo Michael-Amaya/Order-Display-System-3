@@ -1,0 +1,16 @@
+{
+  "name": "order-display-system-3",
+  "version": "3.0.0",
+  "description": "Order Display System for Drive Thrus",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Michael Amaya",
+  "license": "AGPLv3",
+  "devDependencies": {
+    "child-process": "^1.0.2",
+    "electron": "^22.0.0"
+  }
+}
