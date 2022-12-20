@@ -1,8 +1,18 @@
 const {app, BrowserWindow} = require('electron');
 const {fork} = require('child_process');
 const fs = require('fs');
+const XMLmParser = require('./dataParser/xmlParser.js');
 
 let server = null;
+let parser = null;
+
+let appStates = {
+    Idle: 0,
+    Order: 1,
+    Total: 2
+};
+
+let currentState = appStates.Idle;
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -38,7 +48,17 @@ const executeJS = (win, func, ...params) => {
 const processMessage = message => {
     switch(message.type) {
         case 'messageReceived':
-            executeJS(win, 'al', `"${message.data}"`);
+            // executeJS(win, 'al', `"${message.data}"`);
+            // Should be an Object
+            let parsedData = parser.parseData(message.data);
+            console.log(parsedData);
+            if (currentState === appStates.Idle) {
+
+            } else if (currentState === appStates.Order) {
+
+            } else if (currentStates === appStates.Total) {
+
+            }
             break;
         case 'exitError':
             app.exit();
@@ -48,9 +68,21 @@ const processMessage = message => {
     }
 };
 
+const getDataParser = parserCode => {
+    switch(parserCode) {
+        case 'xml':
+            return new XMLmParser();
+        default:
+            console.error('Unknown Parser from config');
+    }
+
+    return null;
+}
+
 app.whenReady().then(() => {
     const config = getConfig();
     win = createWindow();
+    parser = getDataParser(config.dataFormat);
     server = fork('./src/serverStart.js');
     server.send({type: 'start', config: config});
 
