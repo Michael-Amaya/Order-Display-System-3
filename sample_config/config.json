@@ -1,4 +1,10 @@
 {
     "serverType": "tcp",
-    "serverPort": 3009
+    "serverPort": 3009,
+    "dataFormat": "xml",
+    "totalsDelayTime": 7,
+    "orderFontSize": "26px",
+    "totalsFontSize": "30px",
+    "descriptionFontSize": "26px",
+    "slideshowDelayTime": 7
 }

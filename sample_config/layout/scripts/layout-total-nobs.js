@@ -3,13 +3,13 @@ const orderTax = document.getElementById('tax');
 const orderTotal = document.getElementById('total');
 
 const setSubTotal = subTotal => {
-    orderSubTotal.innerHTML = subTotal;
+    orderSubTotal.innerHTML = `$${subTotal}`;
 }
 
 const setTax = tax => {
-    orderTax.innerHTML = tax;
+    orderTax.innerHTML = `$${tax}`;
 }
 
 const setTotal = total => {
-    orderTotal.innerHTML = total;
+    orderTotal.innerHTML = `$${total}`;
 }
