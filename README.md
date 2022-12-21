@@ -1,5 +1,8 @@
 # Order Display System 3
 ---
+## What does it do?
+Order Display System 3 is an upgrade from Order Display System 2. Order Display System is software meant for outside drive thru order units. The unit allows you to preview your order as an employee keys it into their POS. The unit provides assurance to a customer that their order is being taken correctly, and can avoid issues at the order pickup window. 
+
 ## Upgrade from Order Display System 2
 ODS 3 was written because ODS 2 was written in Java. With that said, there is nothing *inherently* wrong with java. The problem is that I was using Java with JavaFX as a web browser, sending JavaScript function calls via obscure and undefined methods. It didn't make any sense to keep it that way, so I rewrote the software in Node.jS with Electron. Function calls are easy to make, along with built in functionality to wait for a webpage to fully load before calling any functions. Additionally, there are many better data parsers for Node.js than in Java. The XML parser in Java would cause unnecessary lag due to the way the whole DocumentFactory system was built. It was never meant for the way this program parses data. The fast-xml-parser package is pretty self explanatory. It parses very quickly and converts to a JavaScript object, making it extremely easy to use. This change makes the parsing and display near **instant!** Lastly, there were some features I wanted to add, but wasn't possible due to how ODS 2 was built.
 
