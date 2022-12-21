@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, globalShortcut} = require('electron');
 const {fork} = require('child_process');
 const fs = require('fs');
 const XMLmParser = require('./dataParser/xmlParser.js');
@@ -23,11 +23,16 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        fullscreen: true
     });
-    // ^ add: fullscreen: true at the end for final testing
 
     win.loadFile('app/index.html');
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
+    globalShortcut.register('Esc', () => {
+        if (win.isFullScreen()) {
+			win.setFullScreen(false)
+		}
+    });
     return win;
 };
 
