@@ -167,6 +167,8 @@ const loadOrderSettings = () => {
     executeJS(win, 'updateOrderFontSize', `'${config.orderFontSize}'`);
     executeJS(win, 'updateTotalsFontSize', `'${config.totalsFontSize}'`);
     executeJS(win, 'updateDescriptionFontSize', `'${config.descriptionFontSize}'`);
+    executeJS(win, 'setSideImage', `'${external.cornerImage}'`);
+    executeJS(win, 'setDescription', `'${external.descriptionText}'`);
 };
 
 const loadTotalSettings = () => {
